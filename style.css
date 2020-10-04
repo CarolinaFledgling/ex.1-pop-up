@@ -23,6 +23,10 @@ body {
   grid-template-rows: 80px 1fr;
 }
 
+.container--blur {
+  filter: blur(2px);
+}
+
 .logo {
   grid-column: 1/2;
   grid-row: 1/2;
@@ -69,10 +73,74 @@ body {
 
 .btn-form {
   display: block;
-  border: 3px solid #040404;
+  border: 1px solid #040404;
   padding: 10px;
   margin-left: 2rem;
   background-color: transparent;
   color: #040404;
   cursor: pointer;
+  transition: 0.1s linear;
+}
+
+.btn-form:hover {
+  background-color: #040404;
+  color: white;
+  border: none;
+}
+
+.main {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+/* STYLE FOR POPup */
+
+.modal-wrap--active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 70%;
+  border: 1px solid #040404;
+}
+
+.modal__top {
+  background-color: turquoise;
+  flex-basis: 10%;
+}
+.modal__middle {
+  background-color: rgb(241, 247, 246);
+  flex-grow: 1;
+}
+.modal__bottom {
+  background-color: turquoise;
+  flex-basis: 10%;
+}
+
+/* MEDIA */
+
+@media (orientation: portrait) and (max-width:800px) {
+  .modal {
+    width: 90%;
+    height: 90%;
+  }
 }
