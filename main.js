@@ -18,3 +18,16 @@ btnClose.addEventListener('click', function(){
     popUp.classList.remove('modal-wrap--active')
     mainContainer.classList.remove('container--blur')
 })
+
+
+//Mobile Menu 
+
+const navBar = document.querySelector('.nav')
+const btnHamb =document.querySelector('.ham')
+
+btnHamb.addEventListener('click', toggleHamburger)
+
+function toggleHamburger(){
+    navBar.classList.toggle('showNav')
+    btnHamb.classList.toggle('showClose')
+}

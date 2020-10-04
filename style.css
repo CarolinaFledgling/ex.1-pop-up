@@ -19,7 +19,7 @@ body {
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(120px, 200px) 1fr;
+  grid-template-columns: minmax(80px, 150px) 1fr;
   grid-template-rows: 80px 1fr;
 }
 
@@ -75,7 +75,8 @@ body {
   display: block;
   border: 1px solid #040404;
   padding: 10px;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   background-color: transparent;
   color: #040404;
   cursor: pointer;
@@ -102,15 +103,15 @@ body {
   margin: 0 auto;
 }
 
-.img_bgc{
-    width: 100%;
-    height: 100%;
+.img_bgc {
+  width: 100%;
+  height: 100%;
 }
 
 /* STYLE FOR POPup */
 
-.modal-wrap{
-    display: none;
+.modal-wrap {
+  display: none;
 }
 
 .modal-wrap--active {
@@ -148,21 +149,21 @@ body {
   flex-basis: 10%;
 }
 
-.btn-close{
-    font-size: 30px;
-    position: absolute;
-    background-color: aliceblue;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-    top:0;
-    right: 0;
-    transform: translate(50%, -50%);
-    cursor: pointer;
-    outline: none;
-    border: 1px solid #040404;
+.btn-close {
+  font-size: 30px;
+  position: absolute;
+  background-color: aliceblue;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #040404;
 }
 
 /* MEDIA */
@@ -171,5 +172,70 @@ body {
   .modal {
     width: 90%;
     height: 90%;
+  }
+
+  .nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #040404;
+    width: 100vw;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__item {
+    margin: 0;
+  }
+
+  .darkMode {
+    margin: 0 0 2rem 0;
+  }
+
+  /* HAMBURGER MENU START */
+
+  .nav {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
+  }
+  .nav__link {
+    color: whitesmoke;
+  }
+
+  .btn-form {
+    color: whitesmoke;
+    border: 1px solid whitesmoke;
+  }
+
+  .ham {
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url("https://ljc-dev.github.io/testing0/ham.svg");
+    background-size: 100%;
+  }
+
+  .showClose {
+    background-image: url("https://ljc-dev.github.io/testing0/ham-close.svg");
+  }
+
+  .showNav {
+    transform: translateY(0);
   }
 }
