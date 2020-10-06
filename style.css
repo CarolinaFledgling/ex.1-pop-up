@@ -140,7 +140,7 @@ body {
 .btn-close {
   font-size: 30px;
   position: absolute;
-  background-color: aliceblue;
+  background-color: #fec107;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -151,7 +151,9 @@ body {
   transform: translate(50%, -50%);
   cursor: pointer;
   outline: none;
-  border: 1px solid #040404;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 /* FORM style  */
@@ -170,7 +172,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
 .form__title {
@@ -187,8 +188,9 @@ body {
 }
 
 label {
-  width: 200px;
+  width: 70%;
   color: #040404;
+  font-size: 1rem;
 }
 
 .input {
@@ -391,19 +393,96 @@ label {
   }
 }
 
-/* Media for FORM -popup */
 
-@media (max-width: 600px) {
-  .input-field {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .label {
+@media (max-width: 500px) {
+  label {
     margin-bottom: 5px;
+    font-size: 0.8rem;
+    padding-right: 2px;
+  }
+  .form__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 0 0.9rem 0;
+    color: #fec107;
+    text-transform: uppercase;
+    text-align: center;
   }
 
-  .input-field.terms {
-    flex-direction: row;
+  .input {
+    padding: 7px;
+  }
+  .modal {
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+  .btn-close {
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .checkBox-description {
+    font-size: 0.8rem;
+  }
+  .inputField-submit {
+    padding: 0;
+  }
+  .custom-select select {
+    font-size: 0.8rem;
   }
 }
+
+
+@media (max-width: 320px) {
+    label {
+      margin-bottom: 3px;
+      font-size: 0.7rem;
+      padding-right: 2px;
+    }
+    .form__title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.4rem 0 0.8rem 0;
+      color: #fec107;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  
+    .input {
+      padding: 4px;
+    }
+    .modal {
+      margin: 0 auto;
+      padding: 9px 18px;
+    }
+    .btn-close {
+      top: 0;
+      right: 0;
+      transform: translate(0, 0);
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 0.8rem;
+    }
+  
+    .checkBox-description {
+      font-size: 0.7rem;
+    }
+    .inputField-submit {
+      padding: 0;
+    }
+    .custom-select select {
+      font-size: 0.7rem;
+    }
+    .btn-submit {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+        font-weight: 400;
+    }
+  }
