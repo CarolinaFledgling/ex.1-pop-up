@@ -163,21 +163,20 @@ body {
   margin: 0px auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
   border-radius: 3px;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* width: 80%;
-  height: 80%; */
+
 }
 
 .form__title {
   font-size: 1.5rem;
   font-weight: 600;
-  padding: 1.2rem 0;
+  padding: 0.5rem 0 1.1rem 0;
   color: #fec107;
   text-transform: uppercase;
   text-align: center;
@@ -243,11 +242,11 @@ label {
   font-size: 1rem;
   color: #040404;
   width: 100%;
-  padding-left: 2rem;
+  padding: 1rem 0;
+  text-align: center;
 }
 
 /* Style for CheckboX */
-
 
 .check {
   display: block;
@@ -255,7 +254,6 @@ label {
   width: 15px;
   height: 15px;
   cursor: pointer;
- 
 }
 
 .checkbox {
@@ -270,7 +268,7 @@ label {
   border: 1px solid #fec107;
   height: 15px;
   width: 15px;
-  display:block;
+  display: block;
 }
 
 .checkmark::before {
@@ -291,9 +289,38 @@ label {
 }
 
 .checkbox:checked ~ .checkmark::before {
-  display:block;
+  display: block;
 }
 
+/* Btn Register */
+
+.inputField-submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0 0 0;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #ffcb47;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  color: black;
+  letter-spacing: 1px;
+  transition: 0.5s linear;
+  text-align: center;
+}
+
+.btn-submit:hover {
+  background-color: #fec107;
+}
 
 /* MEDIA */
 
