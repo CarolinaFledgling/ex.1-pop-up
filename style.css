@@ -12,6 +12,11 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  transition: background 0.2s linear;
+}
+
+body.dark {
+  background: #292c35;
 }
 
 .container {
@@ -33,6 +38,8 @@ body {
   line-height: 80px;
   color: #ffcb47;
   margin: 0 auto;
+  text-align: center;
+  width: 100%;
 }
 .nav {
   grid-column: 2/3;
@@ -58,17 +65,52 @@ body {
   transition: 0.5s linear;
 }
 
+.darkLetters {
+  color: #fff;
+}
+
 .nav__link:hover {
   border-bottom: 1px solid #040404;
 }
 
-.darkMode {
-  display: block;
-  border: none;
-  margin-left: 2rem;
-  background-color: transparent;
-  color: #fe5f55;
-  cursor: pointer;
+/* Style for Dark-mode */
+.label-dark {
+  width: 50px;
+  height: 26px;
+  background-color: #111;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+}
+
+.ball {
+  background-color: #fff;
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox-dark {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-dark:checked + .label-dark .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #fff;
+}
+.fa-sun {
+  color: #fec107;
 }
 
 .btn-form {
@@ -82,6 +124,11 @@ body {
   cursor: pointer;
   transition: 0.1s linear;
   outline: none;
+}
+
+.btn-form--dark {
+  color: #fff;
+  border: 1px solid #fff;
 }
 
 .btn-form:hover {
@@ -327,6 +374,9 @@ label {
 /* MEDIA */
 
 @media (max-width: 800px) {
+  .label-dark {
+    display: none;
+  }
   .nav {
     position: absolute;
     top: 0;
@@ -349,16 +399,12 @@ label {
     margin: 0;
   }
 
-  .darkMode {
-    margin: 0 0 2rem 0;
-  }
-
   /* HAMBURGER MENU START */
 
   .nav {
     grid-column: 1/3;
     transform: translateY(-100%);
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease-in-out;
   }
   .nav__link {
     color: whitesmoke;
@@ -373,7 +419,7 @@ label {
     position: absolute;
     z-index: 1000;
     top: 20px;
-    right: 20px;
+    right: 40px;
     width: 36px;
     height: 36px;
     border: none;
@@ -392,8 +438,6 @@ label {
     transform: translateY(0);
   }
 }
-
-
 
 @media (max-width: 500px) {
   label {
@@ -438,51 +482,50 @@ label {
   }
 }
 
-
 @media (max-width: 320px) {
-    label {
-      margin-bottom: 3px;
-      font-size: 0.7rem;
-      padding-right: 2px;
-    }
-    .form__title {
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.4rem 0 0.8rem 0;
-      color: #fec107;
-      text-transform: uppercase;
-      text-align: center;
-    }
-  
-    .input {
-      padding: 4px;
-    }
-    .modal {
-      margin: 0 auto;
-      padding: 9px 18px;
-    }
-    .btn-close {
-      top: 0;
-      right: 0;
-      transform: translate(0, 0);
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      font-size: 0.8rem;
-    }
-  
-    .checkBox-description {
-      font-size: 0.7rem;
-    }
-    .inputField-submit {
-      padding: 0;
-    }
-    .custom-select select {
-      font-size: 0.7rem;
-    }
-    .btn-submit {
-        padding: 6px 8px;
-        font-size: 0.8rem;
-        font-weight: 400;
-    }
+  label {
+    margin-bottom: 3px;
+    font-size: 0.7rem;
+    padding-right: 2px;
   }
+  .form__title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0 0.8rem 0;
+    color: #fec107;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .input {
+    padding: 4px;
+  }
+  .modal {
+    margin: 0 auto;
+    padding: 9px 18px;
+  }
+  .btn-close {
+    top: 0;
+    right: 0;
+    transform: translate(0, 0);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .checkBox-description {
+    font-size: 0.7rem;
+  }
+  .inputField-submit {
+    padding: 0;
+  }
+  .custom-select select {
+    font-size: 0.7rem;
+  }
+  .btn-submit {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+}
